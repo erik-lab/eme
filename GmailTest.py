@@ -5,6 +5,8 @@ from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
+# todo combine with other functions once they have been restructured
+
 # If modifying these scopes, delete the file gmail.pickle.
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
@@ -15,7 +17,7 @@ def show_chatty_threads(service, user_id='me'):
         tdata = service.users().threads().get(userId=user_id, id=thread['id']).execute()
         nmsgs = len(tdata['messages'])
 
-        if nmsgs > 0:  # skip if <3 msgs in thread
+        if nmsgs > 1:  # skip if <3 msgs in thread
             msg = tdata['messages'][0]['payload']
             subject = ''
             for header in msg['headers']:

@@ -16,8 +16,6 @@
 Recursively extracts the text from a Google Doc.
 """
 
-# TODO move code to DriveTesting and retire this file
-
 from __future__ import print_function
 
 from apiclient import discovery
@@ -31,7 +29,7 @@ from docx import Document
 
 SCOPES = 'https://www.googleapis.com/auth/documents.readonly'
 DISCOVERY_DOC = 'https://docs.googleapis.com/$discovery/rest?version=v1'
-DOCUMENT_ID = '1DEtV3UacozrYewHfkuUiQJ8pBqSqUq1A'
+DOCUMENT_ID = '1-hLQQED7uFktTequXCPHqMZPxgzEYiFvWedx8L5xoe4'
 
 
 def get_credentials():
